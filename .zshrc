@@ -11,8 +11,7 @@ alias lt='exa -aT --color=always --group-directories-first --icons' # tree listi
 alias l.='exa -ald --color=always --group-directories-first --icons .*' # show only dotfiles
 
 # Replace some more things with better alternatives
-alias cat='bat --style header --style snip --style changes --style header'
-[ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru'
+alias cat='bat --style header --style snip --style changes --style header' [ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru'
 
 # Common use
 alias grubup="sudo update-grub"
@@ -55,4 +54,8 @@ alias jctl="journalctl -p 3 -xb"
 # Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
+## NVM
 PATH=~/.console-ninja/.bin:$PATH
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
