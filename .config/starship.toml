@@ -20,7 +20,7 @@ style = "purple"
 truncate_to_repo = true
 truncation_length = 0
 truncation_symbol = "repo: "
-
+ 
 # Fourth param
 [sudo]
 disabled = false
@@ -46,14 +46,14 @@ min_time = 1
 # Prompt: optional param 1
 [time]
 disabled = true
-format = " 🕙 $time($style)\n"
+format = "  $time($style)\n"
 style = "bright-white"
 time_format = "%T"
 
 # Prompt: param 2
 [character]
 error_symbol = " [×](bold red)"
-success_symbol = " [λ](bold red)"
+success_symbol = " [󰈸](bold red)"
 
 # SYMBOLS
 [status]
