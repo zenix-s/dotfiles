@@ -6,7 +6,7 @@ set history=1000
 set showcmd
 set nu rnu
 set numberwidth=1
-set clipboard=unnamed
+set clipboard=unnamedplus
 set showmatch
 set laststatus=2
 set cursorline

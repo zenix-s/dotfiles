@@ -13,6 +13,11 @@ alias l.='exa -ald --color=always --group-directories-first --icons .*' # show o
 # Replace some more things with better alternatives
 alias cat='bat --style header --style snip --style changes --style header' [ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru'
 
+# Personales
+alias dev='cd ~/Development'
+alias vault='cd ~/Git_Vault'
+alias dotfiles='cd ~/dotfiles'
+
 # Common use
 alias grubup="sudo update-grub"
 alias fixpacman="sudo rm /var/lib/pacman/db.lck"
