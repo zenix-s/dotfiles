@@ -20,8 +20,7 @@ keybinds {
         bind "=" "+" { Resize "Increase"; }
         bind "-" { Resize "Decrease"; }
     }
-    pane {
-        bind "Ctrl p" { SwitchToMode "Normal"; }
+    pane { bind "Ctrl p" { SwitchToMode "Normal"; }
         bind "h" "Left" { MoveFocus "Left"; }
         bind "l" "Right" { MoveFocus "Right"; }
         bind "j" "Down" { MoveFocus "Down"; }
@@ -284,7 +283,7 @@ themes {
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "dracula"
+theme "onedark"
 
 // The name of the default layout to load on startup
 // Default: "default"
