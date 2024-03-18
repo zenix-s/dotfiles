@@ -41,3 +41,6 @@ source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 autoload -Uz compinit
 compinit
 
+
+source /usr/share/nvm/init-nvm.sh
+PATH=~/.console-ninja/.bin:$PATH
