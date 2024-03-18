@@ -13,3 +13,5 @@ export VISUAL="vim"
 export EDITOR="vim"
 
 export dev="$HOME/Development"
+export dotfiles="$HOME/dotfiles"
+export vault="$HOME/Git_Vault"
