@@ -1,3 +1,5 @@
+
+
 # NAVIGATION
 
 
@@ -31,16 +33,37 @@ source ~/.config/zsh/.zshalias
 
 
 
-eval "$(starship init zsh)" 
+eval "$(starship init zsh)"
+
+# ZELLIJ AUTO-START
+
+eval "$(zellij setup --generate-auto-start zsh)"
 
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # zsh completion
-# fpath+=~/.config/zsh/plugins/zsh-completions/src
-autoload -Uz compinit
+fpath+=~/.config/zsh/plugins/zsh-completions/src
+autoload -Uz compinit bashcompinit
 compinit
+bashcompinit
 
 
-source /usr/share/nvm/init-nvm.sh
 PATH=~/.console-ninja/.bin:$PATH
+
+function gc()
+{
+	# git commit with header and body read -p "Hello: " header
+	echo $header
+}
+
+alias gc='gc'
+
+# Created by `pipx` on 2024-03-25 09:35:07
+export PATH="$PATH:/home/zenix-s/.local/bin"
+
+eval "$(register-python-argcomplete pipx)"
+
+alias francinette=/home/zenix-s/francinette/tester.sh
+
+alias paco=/home/zenix-s/francinette/tester.sh
