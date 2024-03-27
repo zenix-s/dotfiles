@@ -54,11 +54,11 @@ PATH=~/.console-ninja/.bin:$PATH
 function gc()
 {
   # Preguntar por el header del commit
-  echo -n "Introduce el header del commit: "
+  echo -n "Introduce el header del commit: \n"
   read header
 
   # Preguntar por el body del commit
-  echo -n "Introduce el body del commit: "
+  echo -n "Introduce el body del commit: \n"
   read body
 
   # Hacer el commit
