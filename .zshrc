@@ -53,8 +53,20 @@ PATH=~/.console-ninja/.bin:$PATH
 
 function gc()
 {
-	# git commit with header and body read -p "Hello: " header
-	echo $header
+  # Preguntar por el header del commit
+  echo -n "Introduce el header del commit: "
+  read header
+
+  # Preguntar por el body del commit
+  echo -n "Introduce el body del commit: "
+  read body
+
+  # Hacer el commit
+  git add .
+  git commit -m "$header" -m "$body"
+
+  # Mensaje de confirmación
+  echo "Commit realizado correctamente"
 }
 
 alias gc='gc'
