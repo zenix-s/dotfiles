@@ -2,7 +2,6 @@
 
 # NAVIGATION
 
-
 setopt AUTO_CD              # Go to folder path without using cd.
 
 setopt AUTO_PUSHD           # Push the old directory onto the stack on cd.
@@ -51,7 +50,7 @@ bashcompinit
 
 PATH=~/.console-ninja/.bin:$PATH
 
-function gc()
+function gitc()
 {
   echo -n "Introduce el header del commit: \n"
   read header
