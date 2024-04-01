@@ -68,9 +68,5 @@ alias gc='gc'
 
 # Created by `pipx` on 2024-03-25 09:35:07
 export PATH="$PATH:/home/zenix-s/.local/bin"
-
 eval "$(register-python-argcomplete pipx)"
 
-alias francinette=/home/zenix-s/francinette/tester.sh
-
-alias paco=/home/zenix-s/francinette/tester.sh

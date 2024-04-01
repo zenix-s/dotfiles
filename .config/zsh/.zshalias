@@ -51,3 +51,8 @@ alias jctl="journalctl -p 3 -xb"
 
 # Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
+
+# Paco Francinette
+
+alias francinette=/home/zenix-s/francinette/tester.sh
+alias paco=/home/zenix-s/francinette/tester.sh

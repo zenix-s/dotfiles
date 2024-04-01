@@ -9,8 +9,8 @@ export HISTFILE="$ZSHDOTDIR/.zsh_history"
 export HISTSIZE=10000
 export SAVEHIST=10000
 
-export VISUAL="vim"
-export EDITOR="vim"
+#export VISUAL="nvim"
+#export EDITOR="nvim"
 
 export dev="$HOME/Development"
 export dotfiles="$HOME/dotfiles"
