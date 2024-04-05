@@ -77,4 +77,3 @@ source <(ng completion script)
 eval "$(zoxide init zsh)"
 
 export PATH=$PATH:/home/zenix-s/.spicetify
-alias rm="rm -rf"
