@@ -1,5 +1,3 @@
-
-
 # NAVIGATION
 
 setopt AUTO_CD              # Go to folder path without using cd.
@@ -30,8 +28,6 @@ source ~/.config/zsh/.zshenv
 # ALIASES
 source ~/.config/zsh/.zshalias
 
-
-
 eval "$(starship init zsh)"
 
 # ZELLIJ AUTO-START
@@ -47,24 +43,7 @@ autoload -Uz compinit bashcompinit
 compinit
 bashcompinit
 
-
 PATH=~/.console-ninja/.bin:$PATH
-
-function gitc()
-{
-  echo -n "Introduce el header del commit: \n"
-  read header
-
-  echo -n "Introduce el body del commit: \n"
-  read body
-
-  git add .
-  git commit -m "$header" -m "$body"
-
-  echo "Commit realizado correctamente"
-}
-
-alias gc='gc'
 
 # Created by `pipx` on 2024-03-25 09:35:07
 export PATH="$PATH:/home/zenix-s/.local/bin"

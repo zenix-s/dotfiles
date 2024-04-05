@@ -56,3 +56,18 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
 alias francinette=/home/zenix-s/francinette/tester.sh
 alias paco=/home/zenix-s/francinette/tester.sh
+
+# git
+function gitc()
+{
+  echo -n "Introduce el header del commit: \n"
+  read header
+
+  echo -n "Introduce el body del commit: \n"
+  read body
+
+  git add .
+  git commit -m "$header" -m "$body"
+
+  echo "Commit realizado correctamente"
+}
