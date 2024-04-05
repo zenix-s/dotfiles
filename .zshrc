@@ -70,3 +70,11 @@ alias gc='gc'
 export PATH="$PATH:/home/zenix-s/.local/bin"
 eval "$(register-python-argcomplete pipx)"
 
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
+# zoxide
+eval "$(zoxide init zsh)"
+
+export PATH=$PATH:/home/zenix-s/.spicetify
+alias rm="rm -rf"
