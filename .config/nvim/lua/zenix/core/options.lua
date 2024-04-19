@@ -86,3 +86,4 @@ opt.fillchars = {
   diff = "╱",
   eob = " ",
 }
+opt.swapfile = false
