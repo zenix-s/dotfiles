@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 -- Enable LazyVim auto format
-vim.g.autoformat = true
+vim.g.autoformat = false
 
 -- LazyVim root dir detection
 -- Each entry can be:
@@ -26,7 +26,7 @@ vim.g.lazygit_config = true
 -- LazyVim.terminal.setup("pwsh")
 
 local opt = vim.opt
---
+
 opt.autowrite = true -- Enable auto write
 
 if not vim.env.SSH_TTY then
@@ -36,7 +36,7 @@ if not vim.env.SSH_TTY then
 end
 
 opt.completeopt = "menu,menuone,noselect"
-opt.conceallevel = 2  -- Hide * markup for bold and italic, but not markers with substitutions
+opt.conceallevel = 2 -- Hide * markup for bold and italic, but not markers with substitutions
 opt.confirm = true -- Confirm to save changes before exiting modified buffer
 opt.cursorline = true -- Enable highlighting of the current line
 opt.expandtab = false -- Use spaces instead of tabs
@@ -55,7 +55,7 @@ opt.relativenumber = true -- Relative line numbers
 opt.scrolloff = 4 -- Lines of context
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
 opt.shiftround = true -- Round indent
-opt.shiftwidth = 4 -- Size of an indent
+opt.shiftwidth = 2 -- Size of an indent
 opt.shortmess:append({ W = true, I = true, c = true, C = true })
 opt.showmode = false -- Dont show mode since we have a statusline
 opt.sidescrolloff = 8 -- Columns of context
@@ -68,9 +68,9 @@ opt.splitkeep = "screen"
 opt.splitright = true -- Put new windows right of current
 opt.tabstop = 4 -- Number of spaces tabs count for
 opt.termguicolors = true -- True color support
---if not vim.g.vscode then
---  opt.timeoutlen = 300 -- Lower than default (1000) to quickly trigger which-key
---end
+if not vim.g.vscode then
+  opt.timeoutlen = 300 -- Lower than default (1000) to quickly trigger which-key
+end
 opt.undofile = true
 opt.undolevels = 10000
 opt.updatetime = 200 -- Save swap file and trigger CursorHold
@@ -86,4 +86,30 @@ opt.fillchars = {
   diff = "╱",
   eob = " ",
 }
-opt.swapfile = false
+
+if vim.fn.has("nvim-0.10") == 1 then
+  opt.smoothscroll = true
+end
+
+-- Folding
+vim.opt.foldlevel = 99
+
+if vim.fn.has("nvim-0.9.0") == 1 then
+  vim.opt.statuscolumn = [[%!v:lua.require'lazyvim.util'.ui.statuscolumn()]]
+  vim.opt.foldtext = "v:lua.require'lazyvim.util'.ui.foldtext()"
+end
+
+-- HACK: causes freezes on <= 0.9, so only enable on >= 0.10 for now
+if vim.fn.has("nvim-0.10") == 1 then
+  vim.opt.foldmethod = "expr"
+  vim.opt.foldexpr = "v:lua.require'lazyvim.util'.ui.foldexpr()"
+  vim.opt.foldtext = ""
+  vim.opt.fillchars = "fold: "
+else
+  vim.opt.foldmethod = "indent"
+end
+
+vim.o.formatexpr = "v:lua.require'lazyvim.util'.format.formatexpr()"
+
+-- Fix markdown indentation settings
+vim.g.markdown_recommended_style = 0

@@ -1,3 +1,9 @@
+## ZSH
+#ZSH="/home/zenix-s/.oh-my-zsh/"
+#ZSH_THEME=""
+#plugins=(git)
+#source $ZSH/oh-my-zsh.sh
+
 # NAVIGATION
 
 setopt AUTO_CD              # Go to folder path without using cd.
@@ -28,20 +34,25 @@ source ~/.config/zsh/.zshenv
 # ALIASES
 source ~/.config/zsh/.zshalias
 
+# zsh completion
+fpath+=~/.config/zsh/plugins/zsh-completions/src
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)
+
+# STARSHIP
 eval "$(starship init zsh)"
 
 # ZELLIJ AUTO-START
 
 eval "$(zellij setup --generate-auto-start zsh)"
 
+# ZSH PLUGINS
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# zsh completion
-fpath+=~/.config/zsh/plugins/zsh-completions/src
-autoload -Uz compinit bashcompinit
-compinit
-bashcompinit
 
 PATH=~/.console-ninja/.bin:$PATH
 
@@ -50,9 +61,11 @@ export PATH="$PATH:/home/zenix-s/.local/bin"
 eval "$(register-python-argcomplete pipx)"
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+#source <(ng completion script)
 
 # zoxide
 eval "$(zoxide init zsh)"
 
 export PATH=$PATH:/home/zenix-s/.spicetify
+
+eval "$(fnm env --use-on-cd)"

@@ -9,3 +9,10 @@ return {
     require('onedark').load()
   end,
 }
+--
+--return {
+--	"rebelot/kanagawa.nvim",
+--	opts= {
+--		style = ':'
+--	}
+--}
