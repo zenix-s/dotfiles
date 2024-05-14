@@ -41,6 +41,7 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
+autoload -Uz bashcompinit && bashcompinit
 
 # STARSHIP
 eval "$(starship init zsh)"
@@ -53,6 +54,8 @@ eval "$(zellij setup --generate-auto-start zsh)"
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# NODE VERSION MANAGER
+eval "$(fnm env --use-on-cd)"
 
 PATH=~/.console-ninja/.bin:$PATH
 
@@ -61,11 +64,15 @@ export PATH="$PATH:/home/zenix-s/.local/bin"
 eval "$(register-python-argcomplete pipx)"
 
 # Load Angular CLI autocompletion.
-#source <(ng completion script)
+source <(ng completion script)
 
 # zoxide
 eval "$(zoxide init zsh)"
 
 export PATH=$PATH:/home/zenix-s/.spicetify
 
-eval "$(fnm env --use-on-cd)"
+
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
