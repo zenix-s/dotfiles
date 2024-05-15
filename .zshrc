@@ -76,3 +76,7 @@ export PATH=$PATH:/home/zenix-s/.spicetify
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+alias francinette=/home/zenix-s/francinette/tester.sh
+
+alias paco=/home/zenix-s/francinette/tester.sh
