@@ -19,10 +19,14 @@ resize_increments = false
 # option_as_alt = "None"
 
 [font]
-normal = { family = "Hack", style = "Regular"}
-bold = { family = "Hack", style = "Bold"}
-italic = { family = "Hack", style = "Italic"}
-bold_italic = { family = "Hack", style = "Bold Italic"}
+normal = { family = "MonaspiceNe Nerd Font", style = "Regular"}
+bold = { family = "MonaspiceNe Nerd Font", style = "Bold"}
+italic = { family = "MonaspiceNe Nerd Font", style = "Italic"}
+bold_italic = { family = "MonaspiceNe Nerd Font", style = "Bold Italic"}
+# normal = { family = "Hack", style = "Regular"}
+# bold = { family = "Hack", style = "Bold"}
+# italic = { family = "Hack", style = "Italic"}
+# bold_italic = { family = "Hack", style = "Bold Italic"}
 size = 14
 # offset = {  }
 # glyph_offset = {  }
