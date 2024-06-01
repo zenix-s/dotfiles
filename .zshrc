@@ -63,9 +63,6 @@ PATH=~/.console-ninja/.bin:$PATH
 export PATH="$PATH:/home/zenix-s/.local/bin"
 eval "$(register-python-argcomplete pipx)"
 
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-
 # zoxide
 eval "$(zoxide init zsh)"
 
