@@ -2,12 +2,15 @@
 program = "/bin/zsh"
 args = ["-l"]
 
+[env]
+TERM = "xterm-256color"
+
 [window]
 # dimensions = {  }
 # position = {  }
-padding = { x = 0, y = 0}
+padding = { x = 5, y = 5}
 dynamic_padding = false
-decorations = "full"
+decorations = "None"
 opacity = 1
 blur = false
 startup_mode = "Windowed"

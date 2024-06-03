@@ -1,79 +1,96 @@
-## ZSH
-#ZSH="/home/zenix-s/.oh-my-zsh/"
-#ZSH_THEME=""
-#plugins=(git)
-#source $ZSH/oh-my-zsh.sh
 
-# NAVIGATION
+# Set the directory we want to store zinit and plugins
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-setopt AUTO_CD              # Go to folder path without using cd.
+# Download Zinit, if it's not there yet
+if [ ! -d "$ZINIT_HOME" ]; then
+   mkdir -p "$(dirname $ZINIT_HOME)"
+   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
 
-setopt AUTO_PUSHD           # Push the old directory onto the stack on cd.
-setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the stack.
-setopt PUSHD_SILENT         # Do not print the directory stack after pushd or popd.
+# Source/Load zinit
+source "${ZINIT_HOME}/zinit.zsh"
 
-setopt CORRECT              # Spelling correction
-setopt CDABLE_VARS          # Change directory to a path stored in a variable.
-setopt EXTENDED_GLOB        # Use extended globbing syntax.
 
-# HISTORY
-
-setopt EXTENDED_HISTORY          # Write the history file in the ':start:elapsed;command' format.
-setopt SHARE_HISTORY             # Share history between all sessions.
-setopt HIST_EXPIRE_DUPS_FIRST    # Expire a duplicate event first when trimming history.
-setopt HIST_IGNORE_DUPS          # Do not record an event that was just recorded again.
-setopt HIST_IGNORE_ALL_DUPS      # Delete an old recorded event if a new event is a duplicate.
-setopt HIST_FIND_NO_DUPS         # Do not display a previously found event.
-setopt HIST_IGNORE_SPACE         # Do not record an event starting with a space.
-setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
-setopt HIST_VERIFY               # Do not execute immediately upon history expansion.
-
-# ENVIRONMENT
+# source ENVIRONMENT
 source ~/.config/zsh/.zshenv
 
-# ALIASES
+# source ALIASES
 source ~/.config/zsh/.zshalias
 
-# zsh completion
-fpath+=~/.config/zsh/plugins/zsh-completions/src
-autoload -Uz compinit
-zstyle ':completion:*' menu select
-zmodload zsh/complist
-compinit
-_comp_options+=(globdots)
-autoload -Uz bashcompinit && bashcompinit
+
+# OPTIONS
+# Navegación de directorios
+setopt auto_cd              # Permite cambiar de directorio sin usar 'cd'
+setopt auto_pushd           # Usa 'pushd' implícitamente en lugar de 'cd'
+setopt pushd_ignore_dups    # Evita duplicar directorios en la pila de pushd
+setopt pushd_silent         # Silencia la salida de 'pushd' y 'popd'
+setopt cdable_vars          # Permite usar variables como rutas con 'cd'
+
+# Corrección de errores
+setopt correct              # Habilita la corrección ortográfica de comandos
+
+# Historial de comandos
+setopt appendhistory        # Añade los comandos al historial al final de la sesión
+setopt sharehistory         # Comparte el historial entre las sesiones del shell
+setopt hist_ignore_space    # No guarda los comandos que empiezan con un espacio
+setopt hist_ignore_all_dups # No guarda los comandos duplicados en todo el historial
+setopt hist_save_no_dups    # No guarda duplicados consecutivos en el historial
+setopt hist_ignore_dups     # No guarda los comandos duplicados consecutivos en el historial
+setopt hist_find_no_dups    # No busca duplicados en el historial
+setopt hist_verify          # Muestra el comando antes de ejecutarlo para confirmación
+setopt extended_history     # Guarda información adicional en el historial (como la duración y la fecha de los comandos)
+
+# Expansión y coincidencia de patrones
+setopt extended_glob        # Habilita la coincidencia de patrones avanzada (extended globbing)
+
+
+# Add in zsh plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
+
+# Add in zsh 
+zinit snippet OMZP::git
+zinit snippet OMZP::archlinux
+zinit snippet OMZP::asdf
+
+
+
+autoload -Uz compinit && compinit
+
+zinit cdreplay -q
+
+
+bindkey '^k' history-search-backward
+bindkey '^j' history-search-forward
+
+
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+
+
+eval "$(fzf --zsh)"
+eval "$(zoxide init zsh)"
 
 # STARSHIP
 eval "$(starship init zsh)"
 
-# ZELLIJ AUTO-START
 
-eval "$(zellij setup --generate-auto-start zsh)"
-
-# ZSH PLUGINS
-source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# NODE VERSION MANAGER
-eval "$(fnm env --use-on-cd)"
-
-PATH=~/.console-ninja/.bin:$PATH
-
-# Created by `pipx` on 2024-03-25 09:35:07
-export PATH="$PATH:/home/zenix-s/.local/bin"
-eval "$(register-python-argcomplete pipx)"
-
-# zoxide
-eval "$(zoxide init zsh)"
-
-export PATH=$PATH:/home/zenix-s/.spicetify
-
-
-
-
-# Load Angular CLI autocompletion.
+# ANGULAR CLI
 source <(ng completion script)
 
-alias francinette=/home/zenix-s/francinette/tester.sh
+# ZELLIJ 
+eval "$(zellij setup --generate-auto-start zsh)"
 
-alias paco=/home/zenix-s/francinette/tester.sh
+# CONSOLE NINJA
+PATH=~/.console-ninja/.bin:$PATH
+
+# PIPX
+export PATH="$PATH:/home/sergioffdev/.local/bin"
+eval "$(register-python-argcomplete pipx)"
+
