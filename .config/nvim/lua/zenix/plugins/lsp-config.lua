@@ -17,38 +17,61 @@ return {
     "neovim/nvim-lspconfig",
     lazy = false,
     config = function()
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       local lspconfig = require("lspconfig")
       lspconfig.tsserver.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
       })
       lspconfig.html.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
       })
       lspconfig.lua_ls.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
       })
       lspconfig.clangd.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
       })
       lspconfig.tsserver.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
       })
       lspconfig.angularls.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
       })
       lspconfig.tailwindcss.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
       })
-
-
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
-      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
-      vim.keymap.set('n', '<leader>re', vim.lsp.buf.rename, {})
+      lspconfig.cmake.setup({
+        capabilities = capabilities,
+      })
     end,
+    keys = {
+      {
+        "K",
+        vim.lsp.buf.hover,
+        { mode = "n", desc = "Show hover information" },
+      },
+      {
+        "<leader>gr",
+        vim.lsp.buf.references,
+        { mode = "n", desc = "Show references" },
+      },
+      {
+        "<leader>ca",
+        vim.lsp.buf.code_action,
+        { mode = "n", desc = "Show code actions" },
+      },
+      {
+        "<leader>re",
+        vim.lsp.buf.rename,
+        { mode = "n", desc = "Rename symbol" },
+      },
+      {
+        "<leader>gd",
+        vim.lsp.buf.definition,
+        { mode = "n", desc = "Go to definition" },
+      }
+    },
   },
   {
     "nvimtools/none-ls.nvim",
@@ -58,10 +81,16 @@ return {
         sources = {
           null_ls.builtins.formatting.stylua,
           null_ls.builtins.formatting.prettier,
+          null_ls.builtins.formatting.clang_format,
         },
       })
-
-      vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
     end,
-  }
+    keys = {
+      {
+        "<leader>gf",
+        vim.lsp.buf.format,
+        { mode = "n", desc = "Format buffer" },
+      },
+    },
+  },
 }

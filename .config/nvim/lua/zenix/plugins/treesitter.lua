@@ -13,7 +13,7 @@ return {
         enable = true,
       },
       indent = {
-        enable = true
+        enable = true,
       },
       autotag = {
         enable = true,
@@ -30,9 +30,8 @@ return {
         "cmake",
         "yaml",
         "vim",
-        "lua"
+        "lua",
       },
     })
-
   end,
 }

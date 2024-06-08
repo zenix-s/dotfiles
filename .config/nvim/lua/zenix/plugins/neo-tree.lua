@@ -7,8 +7,24 @@ return {
     "MunifTanjim/nui.nvim",
   },
   config = function()
-    vim.keymap.set("n", "<leader>ee", ":Neotree toggle right<CR>", {})
-    vim.keymap.set("n", "<leader>ef", ":Neotree focus right<CR>", {})
+    require("neo-tree").setup({
+      filesystem = {
+        filtered_items = {
+          visible = true,
+        },
+      },
+    })
   end,
-
+  keys = {
+    {
+      "<leader>ee",
+      "<cmd>Neotree toggle right<CR>",
+      { mode = "n", desc = "Toggle NeoTree" },
+    },
+    {
+      "<leader>ef",
+      "<cmd>Neotree focus right<CR>",
+      { mode = "n", desc = "Focus NeoTree" },
+    },
+  },
 }
