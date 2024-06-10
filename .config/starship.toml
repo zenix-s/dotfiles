@@ -1,18 +1,20 @@
+"$schema" = 'https://starship.rs/config-schema.json'
 ## FIRST LINE/ROW: Info & Status
 # First param ─┌
 [username]
-format = " [$user]($style)@"
+format = " [$user]($style) "
 show_always = true
 style_root = "bold red"
 style_user = "bold red"
 
+
 # Second param
-[hostname]
-disabled = false
-format = "[$hostname]($style) in "
-ssh_only = false
-style = "bold dimmed red"
-trim_at = "-"
+# [hostname]
+# disabled = true
+# format = "[$hostname]($style) in "
+# ssh_only = false
+# style = "bold dimmed red"
+# trim_at = "-"
 
 # Third param
 [directory]
@@ -61,7 +63,7 @@ disabled = false
 format = '[\[$symbol$status_common_meaning$status_signal_name$status_maybe_int\]]($style)'
 map_symbol = true
 pipestatus = true
-symbol = " "
+symbol = "#"
 
 [aws]
 symbol = " "
