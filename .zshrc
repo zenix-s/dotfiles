@@ -85,7 +85,7 @@ eval "$(starship init zsh)"
 source <(ng completion script)
 
 # ZELLIJ 
-eval "$(zellij setup --generate-auto-start zsh)"
+# eval "$(zellij setup --generate-auto-start zsh)"
 
 # CONSOLE NINJA
 PATH=~/.console-ninja/.bin:$PATH

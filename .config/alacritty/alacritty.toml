@@ -6,8 +6,6 @@ args = ["-l"]
 TERM = "xterm-256color"
 
 [window]
-# dimensions = {  }
-# position = {  }
 padding = { x = 5, y = 5}
 dynamic_padding = false
 decorations = "None"
@@ -16,48 +14,37 @@ blur = false
 startup_mode = "Windowed"
 title = "Hola mundo"
 dynamic_title = true
-# class = {  }
 decorations_theme_variant = "Dark"
 resize_increments = false
-# option_as_alt = "None"
 
 [font]
 normal = { family = "MonaspiceNe Nerd Font", style = "Regular"}
 bold = { family = "MonaspiceNe Nerd Font", style = "Bold"}
 italic = { family = "MonaspiceNe Nerd Font", style = "Italic"}
 bold_italic = { family = "MonaspiceNe Nerd Font", style = "Bold Italic"}
-# normal = { family = "Hack", style = "Regular"}
-# bold = { family = "Hack", style = "Bold"}
-# italic = { family = "Hack", style = "Italic"}
-# bold_italic = { family = "Hack", style = "Bold Italic"}
 size = 14
-# offset = {  }
-# glyph_offset = {  }
 builtin_box_drawing = false
 
 [colors]
 [colors.primary]
-background = '#1a1b26'
-foreground = '#a9b1d6'
-
-# Normal colors
-[colors.normal] 
-black   = '#282c34'
-red     = '#e06c75'
-green   = '#98c379'
-yellow  = '#d19a66'
-blue    = '#61afef'
-magenta = '#c678dd'
-cyan    = '#56b6c2'
-white   = '#abb2bf'
-
-# Bright colors
+background = '#1a212e'
+foreground = '#abb2bf'
+[colors.normal]
+black = '#0c0e15'
+red = '#f65866'
+green = '#8bcd5b'
+yellow = '#efbd5d'
+blue = '#41a7fc'
+magenta = '#c75ae8'
+cyan = '#34bfd0'
+white = '#93a4c3'
 [colors.bright]
-black   = '#5c6370'
-red     = '#e06c75'
-green   = '#98c379'
-yellow  = '#d19a66'
-blue    = '#61afef'
-magenta = '#c678dd'
-cyan    = '#56b6c2'
-white   = '#ffffff'
+black = '#455574'
+red = '#f65866'
+green = '#8bcd5b'
+yellow = '#efbd5d'
+blue = '#41a7fc'
+magenta = '#c75ae8'
+cyan = '#34bfd0'
+white = '#abb2bf'
+

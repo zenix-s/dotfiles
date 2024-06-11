@@ -16,13 +16,19 @@ function create_symlink() {
       [Yy]* ) 
         rm -rf $2
         ln -s $1 $2
+        echo "Overwritten $2 \n"
       ;;
-      [Nn]* ) echo "Skipping $2";;
-      * ) echo "Please answer yes or no.";;
+      [Nn]* ) echo "Skipping $2\n";;
+      * ) echo "Please answer yes or no.\n";;
     esac
     return
   fi
-  ln -s $1 $2
+  read -p "Do you want to create symlink $2? (y/n)" yn
+  case $yn in
+    [Yy]* ) ln -s $1 $2; echo "Created symlink $2 \n";;
+    [Nn]* ) echo "Skipping $2\n";;
+    * ) echo "Please answer yes or no.\n";;
+  esac
 }
 
 
