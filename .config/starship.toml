@@ -58,12 +58,12 @@ error_symbol = " [×](bold red)"
 success_symbol = " [󰈸](bold red)"
 
 # SYMBOLS
-[status]
-disabled = false
-format = '[\[$symbol$status_common_meaning$status_signal_name$status_maybe_int\]]($style)'
-map_symbol = true
-pipestatus = true
-symbol = "#"
+# [status]
+# disabled = false
+# format = '[\[$symbol$status_common_meaning$status_signal_name$status_maybe_int\]]($style)'
+# map_symbol = true
+# pipestatus = true
+# symbol = "#"
 
 [aws]
 symbol = " "

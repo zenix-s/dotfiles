@@ -44,6 +44,9 @@ return {
       lspconfig.cmake.setup({
         capabilities = capabilities,
       })
+      lspconfig.csharp_ls.setup({
+        capabilities = capabilities,
+      })
     end,
     keys = {
       {

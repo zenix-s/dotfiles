@@ -1,0 +1,28 @@
+[global_config]
+  window_state = maximise
+  inactive_color_offset = 0.8280542986425339
+[keybindings]
+  layout_launcher = <Primary><Shift><Alt>l
+[profiles]
+  [[default]]
+    icon_bell = False
+    background_color = "#1a212e"
+    background_darkness = 0.98
+    cursor_color = "#bbbbbb"
+    font = MonaspiceNe Nerd Font 18
+    foreground_color = "#abb2bf"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#0c0e15:#f65866:#8bcd5b:#efbd5d:#41a7fc:#c75ae8:#34bfd0:#93a4c3:#455574:#f65866:#8bcd5b:#efbd5d:#41a7fc:#c75ae8:#34bfd0:#f2cc81"
+    use_system_font = False
+    copy_on_selection = True
+    background_image = None
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
