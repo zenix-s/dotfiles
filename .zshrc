@@ -70,19 +70,29 @@ bindkey '^j' history-search-forward
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu no zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 
-eval "$(fzf --zsh)"
-eval "$(zoxide init zsh)"
+# zstyle ':completion:*' menu no zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+# zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # STARSHIP
-eval "$(starship init zsh)"
+if [ -x "$(command -v starship)" ]; then
+  eval "$(starship init zsh)"
+fi
+
+# FZF
+if [ -x "$(command -v fzf)" ]; then
+  eval "$(fzf --zsh)"
+fi
+
+# ZOXIDE
+if [ -x "$(command -v zoxide)" ]; then
+  eval "$(zoxide init zsh)"
+fi
 
 
 # ANGULAR CLI
-source <(ng completion script)
+# source <(ng completion script)
 
 # ZELLIJ 
 # eval "$(zellij setup --generate-auto-start zsh)"

@@ -1,0 +1,19 @@
+let mapleader=" "
+
+set clipboard+=unnamed
+set clipboard+=ideaput
+set scrolloff=5
+set incsearch
+set number relativenumber
+
+map Q gq
+
+noremap <leader>re :action RenameElement<CR>
+
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+

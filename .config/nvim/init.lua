@@ -1,2 +1,9 @@
-require("zenix.core")
-require("zenix.lazy")
+local profile = "zenix"
+
+
+require(profile .. ".core")
+require(profile .. ".lazy")
+
+
+
+
