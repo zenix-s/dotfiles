@@ -9,11 +9,15 @@ set number relativenumber
 map Q gq
 
 noremap <leader>re :action RenameElement<CR>
+noremap <leader>ef :NERDTreeFocus<CR>
+noremap <leader>ee :NERDTreeToggle<CR>
 
 
 " Highlight copied text
 Plug 'machakann/vim-highlightedyank'
 " Commentary plugin
 Plug 'tpope/vim-commentary'
+" Nerd Tree
+Plug 'preservim/nerdtree'
 
 
