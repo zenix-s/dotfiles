@@ -1,3 +1,9 @@
+if [ -f ~/.config/zsh/.zsh_config ]; then
+  source ~/.config/zsh/.zsh_config
+else
+  PROMPT_SHELL="none" # Valor por defecto
+  ZOXIDE=false
+fi
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -10,7 +16,6 @@ fi
 
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
-
 
 # source ENVIRONMENT
 source ~/.config/zsh/.zshenv
@@ -49,7 +54,7 @@ setopt extended_glob        # Habilita la coincidencia de patrones avanzada (ext
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
+# zinit light Aloxaf/fzf-tab
 
 # Add in zsh 
 zinit snippet OMZP::git
@@ -70,15 +75,34 @@ bindkey '^j' history-search-forward
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-
+zstyle ':completion:*' menu select
+_comp_options+=(globdots)
 
 # zstyle ':completion:*' menu no zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 # zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # STARSHIP
-if [ -x "$(command -v starship)" ]; then
-  eval "$(starship init zsh)"
-fi
+case "$PROMPT_SHELL" in
+  "starship")
+    if [ -x "$(command -v starship)" ]; then
+      eval "$(starship init zsh)"
+    else
+      echo "Starship no está instalado, no se puede inicializar."
+    fi
+    ;;
+  "oh-my-posh")
+    if [ -x "$(command -v ~/Apps/my_posh/oh-my-posh)" ]; then
+      eval "$(~/Apps/my_posh/oh-my-posh init zsh --config ~/.config/oh_my_posh/amro.omp.toml)"
+    else
+      echo "Oh My Posh no está instalado, no se puede inicializar."
+    fi
+    ;;
+  "none")
+    ;;
+  *)
+    echo "Tipo de prompt no reconocido: $PROMPT_TYPE"
+    ;;
+esac
 
 # FZF
 if [ -x "$(command -v fzf)" ]; then
@@ -86,7 +110,7 @@ if [ -x "$(command -v fzf)" ]; then
 fi
 
 # ZOXIDE
-if [ -x "$(command -v zoxide)" ]; then
+if ["$ZOXIDE" = true] && [ -x "$(command -v zoxide)" ]; then
   eval "$(zoxide init zsh)"
 fi
 
@@ -101,6 +125,7 @@ fi
 PATH=~/.console-ninja/.bin:$PATH
 
 # PIPX
-export PATH="$PATH:/home/sergioffdev/.local/bin"
-eval "$(register-python-argcomplete pipx)"
+# export PATH="$PATH:/home/sergioffdev/.local/bin"
+# eval "$(register-python-argcomplete pipx)"
+alias c-format="~/.local/bin/c_formatter_42"
 

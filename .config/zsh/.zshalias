@@ -1,6 +1,9 @@
-# Replace ls with exa
-# alias l='exa -al --color=always  --header --group-directories-first --icons' # preferred listing
-# alias ls='exa -al --color=always --header --group-directories-first --icons' # preferred listing
+if [ -f ~/.config/zsh/.zsh_config ]; then
+  source ~/.config/zsh/.zsh_config
+else
+  ZOXIDE=false
+fi
+
 function l() {
   if [ -z "$1" ]; then
     if command -v exa &> /dev/null; then
@@ -21,13 +24,24 @@ function l() {
 # C compiler
 alias gflags='gcc -Wall -Wextra -Werror'
 
-alias cd='z'
-alias ..='z ..'
-alias ...='z ../..'
-alias ....='z ../../..'
-alias .....='z ../../../..'
-alias ......='z ../../../../..'
+
+if ["$ZOXIDE" = true] && command -v z &> /dev/null; then
+  alias cd='z'
+  alias ..='z ..'
+  alias ...='z ../..'
+  alias ....='z ../../..'
+  alias .....='z ../../../..'
+  alias ......='z ../../../../..'
+else
+  alias ..='cd ..'
+  alias ...='cd ../..'
+  alias ....='cd ../../..'
+  alias .....='cd ../../../..'
+  alias ......='cd ../../../../..'
+fi
+
 alias dir='dir --color=auto'
+
 
 
 
