@@ -2,7 +2,7 @@ if [ -f ~/.config/zsh/.zsh_config ]; then
   source ~/.config/zsh/.zsh_config
 else
   PROMPT_SHELL="none" # Valor por defecto
-  ZOXIDE=false
+  ZOXIDE="false"
 fi
 
 # Set the directory we want to store zinit and plugins
@@ -56,7 +56,7 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 # zinit light Aloxaf/fzf-tab
 
-# Add in zsh 
+# Add in zsh
 zinit snippet OMZP::git
 zinit snippet OMZP::archlinux
 zinit snippet OMZP::asdf
@@ -110,7 +110,7 @@ if [ -x "$(command -v fzf)" ]; then
 fi
 
 # ZOXIDE
-if ["$ZOXIDE" = true] && [ -x "$(command -v zoxide)" ]; then
+if [ "$ZOXIDE" = "true" ] && [ -x "$(command -v zoxide)" ]; then
   eval "$(zoxide init zsh)"
 fi
 
@@ -118,7 +118,7 @@ fi
 # ANGULAR CLI
 # source <(ng completion script)
 
-# ZELLIJ 
+# ZELLIJ
 # eval "$(zellij setup --generate-auto-start zsh)"
 
 # CONSOLE NINJA
@@ -129,3 +129,5 @@ PATH=~/.console-ninja/.bin:$PATH
 # eval "$(register-python-argcomplete pipx)"
 alias c-format="~/.local/bin/c_formatter_42"
 
+# Created by `pipx` on 2024-07-16 16:15:05
+export PATH="$PATH:/home/sergioff/.local/bin"

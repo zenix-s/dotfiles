@@ -1,7 +1,7 @@
 if [ -f ~/.config/zsh/.zsh_config ]; then
   source ~/.config/zsh/.zsh_config
 else
-  ZOXIDE=false
+  ZOXIDE="false"
 fi
 
 function l() {
@@ -25,7 +25,7 @@ function l() {
 alias gflags='gcc -Wall -Wextra -Werror'
 
 
-if ["$ZOXIDE" = true] && command -v z &> /dev/null; then
+if [ "$ZOXIDE" = "true" ] && command -v z &> /dev/null; then
   alias cd='z'
   alias ..='z ..'
   alias ...='z ../..'

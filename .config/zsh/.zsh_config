@@ -1,4 +1,4 @@
 # true false
-ZOXIDE=true
+ZOXIDE="true"
 # starship | oh-my-posh | none
-PROMPT_SHELL=oh-my-posh
+PROMPT_SHELL="starship"
