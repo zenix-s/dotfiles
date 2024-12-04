@@ -50,7 +50,3 @@ create_symlink ~/.dotfiles/.config/zellij ~/.config/zellij
 create_symlink ~/.dotfiles/.config/starship.toml ~/.config/starship.toml
 create_symlink ~/.dotfiles/.config/oh_my_posh ~/.config/oh_my_posh
 create_symlink ~/.dotfiles/.ideavimrc ~/.ideavimrc
-
-
-
-

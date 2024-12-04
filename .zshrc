@@ -1,9 +1,15 @@
-if [ -f ~/.config/zsh/.zsh_config ]; then
-  source ~/.config/zsh/.zsh_config
-else
-  PROMPT_SHELL="none" # Valor por defecto
-  ZOXIDE="false"
-fi
+#######################
+#######################
+# VARIABLES SECTION
+
+# true false
+ZOXIDE="true"
+# starship | oh-my-posh | none
+PROMPT_SHELL="starship"
+
+#######################
+#######################
+# CONFIGURATION SECTION
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -17,14 +23,85 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-# source ENVIRONMENT
-source ~/.config/zsh/.zshenv
+#######################
+#######################
+# ENVIRONMENT SECTION
+export CONFIG_HOME="$HOME/.config"
+export DATA_HOME="$CONFIG_HOME/local/share"
+export CACHE_HOME="$CONFIG_HOME/cache"
 
-# source ALIASES
-source ~/.config/zsh/.zshalias
+export ZSHDOTDIR="$CONFIG_HOME/zsh"
 
+export HISTFILE=".zsh_history"
+export HISTSIZE=10000
+export SAVEHIST=10000
 
-# OPTIONS
+#export VISUAL="nvim"
+#export EDITOR="nvim"
+
+export dev="$HOME/Development"
+export dotfiles="$HOME/dotfiles"
+export vault="$HOME/Git_Vault"
+
+#######################
+#######################
+# ALIASES SECTION
+
+function l() {
+  if [ -z "$1" ]; then
+    if command -v exa &> /dev/null; then
+      exa -al --color=always  --header --group-directories-first --icons
+    else
+      ls -al --color=always
+    fi
+  else
+    if command -v exa &> /dev/null; then
+      exa -al --color=always  --header --group-directories-first --icons $1
+    else
+      ls -al --color=always $1
+    fi
+  fi
+}
+
+# C compiler
+alias gflags='gcc -Wall -Wextra -Werror'
+
+if [ "$ZOXIDE" = "true" ] && command -v z &> /dev/null; then
+  alias cd='z'
+  alias ..='z ..'
+  alias ...='z ../..'
+  alias ....='z ../../..'
+  alias .....='z ../../../..'
+  alias ......='z ../../../../..'
+else
+  alias ..='cd ..'
+  alias ...='cd ../..'
+  alias ....='cd ../../..'
+  alias .....='cd ../../../..'
+  alias ......='cd ../../../../..'
+fi
+
+alias dir='dir --color=auto'
+
+# git
+function gitc()
+{
+  echo -n "Introduce el header del commit: \n"
+  read header
+
+  echo -n "Introduce el body del commit: \n"
+  read body
+
+  git add .
+  git commit -m "$header" -m "$body"
+
+  echo "Commit realizado con éxito"
+}
+
+#######################
+#######################
+# ZSH CONFIGURATION
+
 # Navegación de directorios
 setopt auto_cd              # Permite cambiar de directorio sin usar 'cd'
 setopt auto_pushd           # Usa 'pushd' implícitamente en lugar de 'cd'

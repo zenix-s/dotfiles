@@ -1,4 +1,4 @@
-[shell]
+[terminal.shell]
 program = "/bin/zsh"
 args = ["-l"]
 
@@ -47,4 +47,6 @@ blue = '#41a7fc'
 magenta = '#c75ae8'
 cyan = '#34bfd0'
 white = '#abb2bf'
+
+[terminal]
 
