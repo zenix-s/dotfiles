@@ -6,9 +6,9 @@ args = ["-l"]
 TERM = "xterm-256color"
 
 [window]
-padding = { x = 5, y = 5}
+padding = { x = 5, y = 5 }
 dynamic_padding = false
-decorations = "None"
+# decorations = "None"
 opacity = 1
 blur = false
 startup_mode = "Windowed"
@@ -18,10 +18,10 @@ decorations_theme_variant = "Dark"
 resize_increments = false
 
 [font]
-normal = { family = "MonaspiceNe Nerd Font", style = "Regular"}
-bold = { family = "MonaspiceNe Nerd Font", style = "Bold"}
-italic = { family = "MonaspiceNe Nerd Font", style = "Italic"}
-bold_italic = { family = "MonaspiceNe Nerd Font", style = "Bold Italic"}
+normal = { family = "MonaspiceNe Nerd Font", style = "Regular" }
+bold = { family = "MonaspiceNe Nerd Font", style = "Bold" }
+italic = { family = "MonaspiceNe Nerd Font", style = "Italic" }
+bold_italic = { family = "MonaspiceNe Nerd Font", style = "Bold Italic" }
 size = 14
 builtin_box_drawing = false
 
@@ -49,4 +49,3 @@ cyan = '#34bfd0'
 white = '#abb2bf'
 
 [terminal]
-

@@ -32,9 +32,9 @@ export CACHE_HOME="$CONFIG_HOME/cache"
 
 export ZSHDOTDIR="$CONFIG_HOME/zsh"
 
-export HISTFILE=".zsh_history"
-export HISTSIZE=10000
-export SAVEHIST=10000
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
 
 #export VISUAL="nvim"
 #export EDITOR="nvim"
@@ -98,6 +98,8 @@ function gitc()
   echo "Commit realizado con éxito"
 }
 
+alias set_42_header='~/.dotfiles/inject_42h_linux_x86_64'
+
 #######################
 #######################
 # ZSH CONFIGURATION
@@ -113,6 +115,7 @@ setopt cdable_vars          # Permite usar variables como rutas con 'cd'
 setopt correct              # Habilita la corrección ortográfica de comandos
 
 # Historial de comandos
+setopt SHARE_HISTORY
 setopt appendhistory        # Añade los comandos al historial al final de la sesión
 setopt sharehistory         # Comparte el historial entre las sesiones del shell
 setopt hist_ignore_space    # No guarda los comandos que empiezan con un espacio
