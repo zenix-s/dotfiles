@@ -144,6 +144,7 @@ zinit snippet OMZP::asdf
 
 
 autoload -Uz compinit && compinit
+autoload -Uz colors && colors
 
 zinit cdreplay -q
 
@@ -211,3 +212,6 @@ alias c-format="~/.local/bin/c_formatter_42"
 
 # Created by `pipx` on 2024-07-16 16:15:05
 export PATH="$PATH:/home/sergioff/.local/bin"
+
+# Created by `pipx` on 2024-12-31 17:36:55
+export PATH="$PATH:/home/zenix-dev/.local/bin"

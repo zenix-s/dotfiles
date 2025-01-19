@@ -1,5 +1,9 @@
 #!/bin/sh
 
+#-----------------------------------------------------------------------------#
+#                   Deprecated, use stow instead of this script               #
+#-----------------------------------------------------------------------------#
+
 function destination_exists() {
   if [ -f $1 ] || [ -d $1 ]; then
     return 0
@@ -38,15 +42,15 @@ function create_symlink() {
   echo -e "\n"
 }
 
-create_symlink ~/.dotfiles/.zshrc ~/.zshrc
-create_symlink ~/.dotfiles/.config/zsh ~/.config/zsh
+create_symlink ~/dotfiles/.zshrc ~/.zshrc
+create_symlink ~/dotfiles/.config/zsh ~/.config/zsh
 
-create_symlink ~/.dotfiles/.config/nvim ~/.config/nvim
-create_symlink ~/.dotfiles/.config/terminator ~/.config/terminator
-create_symlink ~/.dotfiles/.tmux.conf ~/.tmux.conf
-create_symlink ~/.dotfiles/.config/alacritty ~/.config/alacritty
-create_symlink ~/.dotfiles/.config/wallpapers ~/.config/wallpapers
-create_symlink ~/.dotfiles/.config/zellij ~/.config/zellij
-create_symlink ~/.dotfiles/.config/starship.toml ~/.config/starship.toml
-create_symlink ~/.dotfiles/.config/oh_my_posh ~/.config/oh_my_posh
-create_symlink ~/.dotfiles/.ideavimrc ~/.ideavimrc
+create_symlink ~/dotfiles/.config/nvim ~/.config/nvim
+create_symlink ~/dotfiles/.config/terminator ~/.config/terminator
+create_symlink ~/dotfiles/.tmux.conf ~/.tmux.conf
+create_symlink ~/dotfiles/.config/alacritty ~/.config/alacritty
+create_symlink ~/dotfiles/.config/wallpapers ~/.config/wallpapers
+create_symlink ~/dotfiles/.config/zellij ~/.config/zellij
+create_symlink ~/dotfiles/.config/starship.toml ~/.config/starship.toml
+create_symlink ~/dotfiles/.config/oh_my_posh ~/.config/oh_my_posh
+create_symlink ~/dotfiles/.ideavimrc ~/.ideavimrc

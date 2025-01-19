@@ -1,7 +1,6 @@
 let mapleader=" "
 
 set clipboard+=unnamedplus
-set clipboard+=ideaput
 set scrolloff=5
 set incsearch
 set number relativenumber
