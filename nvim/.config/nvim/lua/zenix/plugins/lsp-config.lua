@@ -20,7 +20,7 @@ return {
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       local lspconfig = require("lspconfig")
-      lspconfig.tsserver.setup({
+      lspconfig.ts_ls.setup({
         capabilities = capabilities,
       })
       lspconfig.html.setup({
@@ -30,9 +30,6 @@ return {
         capabilities = capabilities,
       })
       lspconfig.clangd.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.tsserver.setup({
         capabilities = capabilities,
       })
       lspconfig.angularls.setup({

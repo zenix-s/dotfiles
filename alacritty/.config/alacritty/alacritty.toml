@@ -9,7 +9,7 @@ TERM = "xterm-256color"
 padding = { x = 5, y = 5 }
 dynamic_padding = false
 # decorations = "None"
-opacity = 1
+opacity = 0.9
 blur = false
 startup_mode = "Windowed"
 title = "Terminal"
