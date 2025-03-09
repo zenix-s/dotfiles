@@ -215,3 +215,5 @@ export PATH="$PATH:/home/sergioff/.local/bin"
 
 # Created by `pipx` on 2024-12-31 17:36:55
 export PATH="$PATH:/home/zenix-dev/.local/bin"
+
+export PATH=$PATH:/home/zenix-dev/.spicetify
