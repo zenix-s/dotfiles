@@ -1,0 +1,51 @@
+{
+    "CanonicalFormatClass": {
+        "description": "Canonical Format Class",
+        "prefix": "cfc",
+        "body": [
+            "#ifndef ${1:CLASSNAME}_HPP",
+            "#define ${1:CLASSNAME}_HPP",
+            "",
+            "class ${2:ClassName}",
+            "{",
+            "  private:",
+            "",
+            "  public:",
+            "    ${2:ClassName}();",
+            "    ~${2:ClassName}();",
+            "    ${2:ClassName}(const ${2:ClassName}& other);",
+            "    ${2:ClassName}& operator=(const ${2:ClassName}& other);",
+            "};",
+            "",
+            "#endif"
+        ]
+    },
+    "header": {
+        /* ************************************************************************** */
+        /*                                                                            */
+        /*                                                        :::      ::::::::   */
+        /*   main.cpp                                           :+:      :+:    :+:   */
+        /*                                                    +:+ +:+         +:+     */
+        /*   By: serferna <serferna@student.42madrid.com>   +#+  +:+       +#+        */
+        /*                                                +#+#+#+#+#+   +#+           */
+        /*   Created: 2025/03/02 12:24:21 by serferna          #+#    #+#             */
+        /*   Updated: 2025/03/02 21:04:26 by serferna         ###   ########.fr       */
+        /*                                                                            */
+        /* ************************************************************************** */
+        "description": "42 Header",
+        "prefix": "stdheader",
+        "body": [
+            "/* ************************************************************************** */",
+            "/*                                                                            */",
+            "/*                                                        :::      ::::::::   */",
+            "/*   ${1:FILENAME}                                       :+:      :+:    :+:   */",
+            "/*                                                    +:+ +:+         +:+     */",
+            "/*   By: serferna <serferna@student.42madrid.com>   +#+  +:+       +#+        */",
+            "/*                                                +#+#+#+#+#+   +#+           */",
+            "/*   Created: ${2:YEAR}/${3:MONTH}/${4:DAY} 18:01:21 by serferna          #+#    #+#             */",
+            "/*   Updated: ${2:YEAR}/${3:MONTH}/${4:DAY} 18:01:21 by serferna         ###   ########.fr       */",
+            "/*                                                                            */",
+            "/* ************************************************************************** */"
+        ]
+    }
+}
