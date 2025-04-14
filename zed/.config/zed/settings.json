@@ -7,6 +7,9 @@
         "version": "2",
         "dock": "right"
     },
+    "features": {
+        "edit_prediction_provider": "copilot"
+    },
     "vim_mode": true,
     "vim": {
         "toggle_relative_line_numbers": true,
