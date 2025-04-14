@@ -1,8 +1,8 @@
 {
     "assistant": {
         "default_model": {
-            "provider": "copilot_chat",
-            "model": "gpt-4o"
+            "provider": "zed.dev",
+            "model": "claude-3-7-sonnet-latest"
         },
         "version": "2",
         "dock": "right"
@@ -25,7 +25,7 @@
     "tab_size": 4,
     "ui_font_size": 16,
     "buffer_font_size": 16,
-    "buffer_font_family": "Cascadia Code",
+    "buffer_font_family": "MonaspiceNe Nerd Font",
     "buffer_line_height": {
         "custom": 1.5
     },
@@ -58,6 +58,9 @@
     },
     "git_panel": {
         "dock": "right"
+    },
+    "file_types": {
+        "C": ["h", "c"]
     },
     "languages": {
         "C": {

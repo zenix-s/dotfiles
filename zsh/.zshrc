@@ -9,22 +9,6 @@ PROMPT_SHELL="starship"
 
 #######################
 #######################
-# CONFIGURATION SECTION
-
-# Set the directory we want to store zinit and plugins
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-
-# Download Zinit, if it's not there yet
-if [ ! -d "$ZINIT_HOME" ]; then
-   mkdir -p "$(dirname $ZINIT_HOME)"
-   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-fi
-
-# Source/Load zinit
-source "${ZINIT_HOME}/zinit.zsh"
-
-#######################
-#######################
 # ENVIRONMENT SECTION
 export CONFIG_HOME="$HOME/.config"
 export DATA_HOME="$CONFIG_HOME/local/share"
@@ -129,25 +113,8 @@ setopt extended_history     # Guarda información adicional en el historial (com
 # Expansión y coincidencia de patrones
 setopt extended_glob        # Habilita la coincidencia de patrones avanzada (extended globbing)
 
-
-# Add in zsh plugins
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-# zinit light Aloxaf/fzf-tab
-
-# Add in zsh
-zinit snippet OMZP::git
-zinit snippet OMZP::archlinux
-zinit snippet OMZP::asdf
-
-
-
 autoload -Uz compinit && compinit
 autoload -Uz colors && colors
-
-zinit cdreplay -q
-
 
 bindkey '^k' history-search-backward
 bindkey '^j' history-search-forward
@@ -167,6 +134,8 @@ case "$PROMPT_SHELL" in
   "starship")
     if [ -x "$(command -v starship)" ]; then
       eval "$(starship init zsh)"
+    elif [ -x "$(command -v ~/.local/bin/starship)" ]; then
+      eval "$($HOME/.local/bin/starship init zsh)"
     else
       echo "Starship no está instalado, no se puede inicializar."
     fi
