@@ -1,5 +1,5 @@
 {
-    "assistant": {
+    "agent": {
         "default_model": {
             "provider": "copilot_chat",
             "model": "gpt-4o"
@@ -61,6 +61,7 @@
     },
     "languages": {
         "C": {
+            "hard_tabs": true,
             "show_wrap_guides": true,
             "wrap_guides": [80],
             "formatter": {

@@ -6,7 +6,9 @@
             "space f": "file_finder::Toggle",
             "space e f": "project_panel::ToggleFocus",
             "space r e": "editor::Rename",
-            "space q": "pane::CloseActiveItem"
+            "space q": "pane::CloseActiveItem",
+            "space c a": "editor::ToggleCodeActions",
+            "space p t": "pane::TogglePinTab"
         }
     },
     {
