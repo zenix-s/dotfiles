@@ -8,7 +8,9 @@
             "space r e": "editor::Rename",
             "space q": "pane::CloseActiveItem",
             "space c a": "editor::ToggleCodeActions",
-            "space p t": "pane::TogglePinTab"
+            "space p t": "pane::TogglePinTab",
+            "space t e": "workspace::NewCenterTerminal",
+            "space t t": "terminal_panel::ToggleFocus"
         }
     },
     {
@@ -19,7 +21,8 @@
             "space r e": "project_panel::Rename",
             "space y": "project_panel::Copy",
             "space p": "project_panel::Paste",
-            "space x": "project_panel::Cut"
+            "space x": "project_panel::Cut",
+            "space t e": "workspace::OpenInTerminal",
         }
     },
     {

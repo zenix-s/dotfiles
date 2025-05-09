@@ -1,9 +1,5 @@
 {
     "agent": {
-        "default_model": {
-            "provider": "copilot_chat",
-            "model": "gpt-4o"
-        },
         "version": "2",
         "dock": "right"
     },
@@ -25,7 +21,7 @@
     "tab_size": 4,
     "ui_font_size": 16,
     "buffer_font_size": 16,
-    "buffer_font_family": "Cascadia Code",
+    "buffer_font_family": "MonaspiceNe Nerd Font",
     "buffer_line_height": {
         "custom": 1.5
     },
@@ -43,7 +39,8 @@
         "coloring": "indent_aware"
     },
     "terminal": {
-        "dock": null
+        "dock": null,
+        "default_height": 700
     },
     "git": {
         "git_gutter": "tracked_files",
