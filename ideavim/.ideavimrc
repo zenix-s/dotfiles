@@ -10,6 +10,7 @@ map Q gq
 noremap <leader>re :action RenameElement<CR>
 noremap <leader>ef :NERDTreeFocus<CR>
 noremap <leader>ee :NERDTreeToggle<CR>
+noremap <leader>ca :action action<CR>
 
 
 " Highlight copied text
