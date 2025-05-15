@@ -20,4 +20,11 @@
             "#endif"
         ]
     },
+    "Debug print": {
+        "description": "Debug print",
+        "prefix": "dbg",
+        "body": [
+            "#"
+        ]
+    }
 }

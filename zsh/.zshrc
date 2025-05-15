@@ -11,18 +11,6 @@ PROMPT_SHELL="starship"
 #######################
 # CONFIGURATION SECTION
 
-# Set the directory we want to store zinit and plugins
-# ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-
-# Download Zinit, if it's not there yet
-# if [ ! -d "$ZINIT_HOME" ]; then
-#    mkdir -p "$(dirname $ZINIT_HOME)"
-#    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-# fi
-
-# Source/Load zinit
-# source "${ZINIT_HOME}/zinit.zsh"
-
 #######################
 #######################
 # ENVIRONMENT SECTION
@@ -35,9 +23,6 @@ export ZSHDOTDIR="$CONFIG_HOME/zsh"
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-
-#export VISUAL="nvim"
-#export EDITOR="nvim"
 
 export dev="$HOME/Development"
 export dotfiles="$HOME/dotfiles"
@@ -129,38 +114,17 @@ setopt extended_history     # Guarda información adicional en el historial (com
 # Expansión y coincidencia de patrones
 setopt extended_glob        # Habilita la coincidencia de patrones avanzada (extended globbing)
 
-
-# # Add in zsh plugins
-# zinit light zsh-users/zsh-syntax-highlighting
-# zinit light zsh-users/zsh-completions
-# zinit light zsh-users/zsh-autosuggestions
-# # zinit light Aloxaf/fzf-tab
-
-# # Add in zsh
-# zinit snippet OMZP::git
-# zinit snippet OMZP::archlinux
-# zinit snippet OMZP::asdf
-
-
-
 autoload -Uz compinit && compinit
 autoload -Uz colors && colors
 
-# zinit cdreplay -q
-
-
 bindkey '^k' history-search-backward
 bindkey '^j' history-search-forward
-
 
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu select
 _comp_options+=(globdots)
-
-# zstyle ':completion:*' menu no zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-# zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # STARSHIP
 case "$PROMPT_SHELL" in
@@ -195,19 +159,7 @@ if [ "$ZOXIDE" = "true" ] && [ -x "$(command -v zoxide)" ]; then
   eval "$(zoxide init zsh)"
 fi
 
-
-# ANGULAR CLI
-# source <(ng completion script)
-
-# ZELLIJ
-# eval "$(zellij setup --generate-auto-start zsh)"
-
-# CONSOLE NINJA
-PATH=~/.console-ninja/.bin:$PATH
-
 # PIPX
-# export PATH="$PATH:/home/sergioffdev/.local/bin"
-# eval "$(register-python-argcomplete pipx)"
 alias c-format="~/.local/bin/c_formatter_42"
 
 # Created by `pipx` on 2024-07-16 16:15:05
