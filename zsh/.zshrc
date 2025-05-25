@@ -83,6 +83,18 @@ function gitc()
   echo "Commit realizado con éxito"
 }
 
+alias gd="git diff"
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push"
+alias gu="git pull"
+alias gl="git log --oneline --graph --decorate"
+alias gs="git status --short"
+alias gb="git branch"
+alias gi="git init"
+alias gco="git checkout"
+alias gcl="git clone"
+
 alias set_42_header='~/.dotfiles/inject_42h_linux_x86_64'
 
 #######################
