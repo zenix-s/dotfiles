@@ -1,12 +1,16 @@
 {
     "agent": {
-        "default_profile": "ask",
+        "model_parameters": [],
         "default_model": {
             "provider": "copilot_chat",
-            "model": "gpt-4o"
+            "model": "gpt-4.1"
         },
-        "version": "2",
-        "dock": "right"
+        "version": "2"
+    },
+    "show_completions_on_input": true,
+    "show_edit_predictions": false,
+    "edit_predictions": {
+        "mode": "subtle"
     },
     "features": {
         "edit_prediction_provider": "copilot"
@@ -75,6 +79,9 @@
         "C++": {
             "show_wrap_guides": true,
             "wrap_guides": [120]
+        },
+        "Make": {
+            "hard_tabs": true
         }
     }
 }

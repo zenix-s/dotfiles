@@ -1,48 +1,54 @@
 [
-	{
-		"context": "VimControl && !menu",
-		"bindings": {
-			// Put key bindings here if you want them to work in normal & visual mode.
-			"space f": "file_finder::Toggle",
-			"space e f": "project_panel::ToggleFocus",
-			"space r e": "editor::Rename",
-			"space q": "pane::CloseActiveItem",
-			"space c a": "editor::ToggleCodeActions",
-			"space p t": "pane::TogglePinTab",
-			"space t e": "workspace::NewCenterTerminal",
-			"space t t": "terminal_panel::ToggleFocus"
-		}
-	},
-	{
-		"context": "ProjectPanel",
-		"bindings": {
-			"space a": "project_panel::NewFile",
-			"space d": "project_panel::NewDirectory",
-			"space r e": "project_panel::Rename",
-			"space y": "project_panel::Copy",
-			"space p": "project_panel::Paste",
-			"space x": "project_panel::Cut",
-			"space t e": "workspace::OpenInTerminal"
-		}
-	},
-	{
-		"context": "vim_mode == normal && !menu",
-		"bindings": {
-			// "shift-y": ["workspace::SendKeystrokes", "y $"] // Use neovim's yank behavior: yank to end of line.
-		}
-	},
-	{
-		"context": "vim_mode == insert",
-		"bindings": {
-			// "j k": "vim::NormalBefore" // In insert mode, make jk escape to normal mode.
-		}
-	},
-	{
-		"context": "EmptyPane || SharedScreen",
-		"bindings": {
-			// Put key bindings here (in addition to the context above) if you want them to
-			// work when no editor exists.
-			// "space f": "file_finder::Toggle"
-		}
-	}
+    {
+        "context": "Editor",
+        "bindings": {
+            "ctrl-alt-u": "editor::ToggleEditPrediction"
+        }
+    },
+    {
+        "context": "VimControl && !menu",
+        "bindings": {
+            // Put key bindings here if you want them to work in normal & visual mode.
+            "space f": "file_finder::Toggle",
+            "space e f": "project_panel::ToggleFocus",
+            "space r e": "editor::Rename",
+            "space q": "pane::CloseActiveItem",
+            "space c a": "editor::ToggleCodeActions",
+            "space p t": "pane::TogglePinTab",
+            "space t e": "workspace::NewCenterTerminal",
+            "space t t": "terminal_panel::ToggleFocus"
+        }
+    },
+    {
+        "context": "ProjectPanel",
+        "bindings": {
+            "space a": "project_panel::NewFile",
+            "space d": "project_panel::NewDirectory",
+            "space r e": "project_panel::Rename",
+            "space y": "project_panel::Copy",
+            "space p": "project_panel::Paste",
+            "space x": "project_panel::Cut",
+            "space t e": "workspace::OpenInTerminal"
+        }
+    },
+    {
+        "context": "vim_mode == normal && !menu",
+        "bindings": {
+            // "shift-y": ["workspace::SendKeystrokes", "y $"] // Use neovim's yank behavior: yank to end of line.
+        }
+    },
+    {
+        "context": "vim_mode == insert",
+        "bindings": {
+            // "j k": "vim::NormalBefore" // In insert mode, make jk escape to normal mode.
+        }
+    },
+    {
+        "context": "EmptyPane || SharedScreen",
+        "bindings": {
+            // Put key bindings here (in addition to the context above) if you want them to
+            // work when no editor exists.
+            // "space f": "file_finder::Toggle"
+        }
+    }
 ]
