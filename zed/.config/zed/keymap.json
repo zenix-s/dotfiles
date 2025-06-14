@@ -2,7 +2,8 @@
     {
         "context": "Editor",
         "bindings": {
-            "ctrl-alt-u": "editor::ToggleEditPrediction"
+            "ctrl-alt-u": "editor::ToggleEditPrediction",
+            "ctrl-alt-i": "workspace::NewCenterTerminal"
         }
     },
     {
@@ -16,7 +17,8 @@
             "space c a": "editor::ToggleCodeActions",
             "space p t": "pane::TogglePinTab",
             "space t e": "workspace::NewCenterTerminal",
-            "space t t": "terminal_panel::ToggleFocus"
+            "space t t": "terminal_panel::ToggleFocus",
+            "ctrl-y": "agent::Keep"
         }
     },
     {
