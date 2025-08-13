@@ -1,12 +1,12 @@
 {
     "agent": {
+        "always_allow_tool_actions": true,
         "default_profile": "write",
         "model_parameters": [],
         "default_model": {
-            "provider": "copilot_chat",
-            "model": "gpt-4.1"
-        },
-        "version": "2"
+            "provider": "zed.dev",
+            "model": "claude-sonnet-4"
+        }
     },
     "show_completions_on_input": true,
     "show_edit_predictions": true,
@@ -43,7 +43,7 @@
     "theme": {
         "mode": "dark",
         "light": "One Light",
-        "dark": "One Dark Pro"
+        "dark": "One Dark"
     },
     "indent_guides": {
         "coloring": "indent_aware"
@@ -65,6 +65,9 @@
     },
     "git_panel": {
         "dock": "right"
+    },
+    "file_types": {
+        "C++": ["hpp", "c", "cpp", "hpp", "tpp"]
     },
     "languages": {
         "C": {

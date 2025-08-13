@@ -32,7 +32,8 @@
             "SpacesInParentheses: false",
             "SpacesInSquareBrackets: false",
             "TabWidth: 4",
-            "UseTab: Never"
+            "UseTab: Never",
+            "IndentCaseLabels: true"
         ]
     },
     "header": {
