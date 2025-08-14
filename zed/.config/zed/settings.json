@@ -1,7 +1,7 @@
 {
     "agent": {
         "always_allow_tool_actions": true,
-        "default_profile": "write",
+        "default_profile": "ask",
         "model_parameters": [],
         "default_model": {
             "provider": "zed.dev",
