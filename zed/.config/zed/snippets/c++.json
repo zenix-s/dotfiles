@@ -9,8 +9,6 @@
             "class ${2:ClassName}",
             "{",
             "  private:",
-            "    void copy(const ${2:ClassName}& other);",
-            "",
             "  public:",
             "    ${2:ClassName}();",
             "    ${2:ClassName}(const ${2:ClassName}& other);",
@@ -24,8 +22,6 @@
     "Debug print": {
         "description": "Debug print",
         "prefix": "dbg",
-        "body": [
-            "#"
-        ]
+        "body": ["#"]
     }
 }

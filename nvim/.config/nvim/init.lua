@@ -1,5 +1,3 @@
-local profile = "zenix"
-
-
-require(profile .. ".core")
-require(profile .. ".lazy")
+require("core.lazy")
+require("core.lsp")
+require("config.options")

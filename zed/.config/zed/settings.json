@@ -37,7 +37,7 @@
     },
     "relative_line_numbers": true,
     "project_panel": {
-        "dock": "right",
+        "dock": "left",
         "auto_fold_dirs": false
     },
     "theme": {
