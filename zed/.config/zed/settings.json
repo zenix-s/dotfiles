@@ -1,7 +1,7 @@
 {
     "agent": {
         "always_allow_tool_actions": true,
-        "default_profile": "ask",
+        "default_profile": "write",
         "model_parameters": [],
         "default_model": {
             "provider": "zed.dev",
@@ -31,7 +31,7 @@
     "tab_size": 4,
     "ui_font_size": 16,
     "buffer_font_size": 16,
-    "buffer_font_family": "MonaspiceNe Nerd Font",
+    // "buffer_font_family": "MonaspiceNe Nerd Font",
     "buffer_line_height": {
         "custom": 1.5
     },
