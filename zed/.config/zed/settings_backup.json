@@ -1,0 +1,89 @@
+{
+    "agent": {
+        "default_model": {
+            "provider": "copilot_chat",
+            "model": "gpt-5-mini"
+        },
+        "model_parameters": []
+    },
+    "show_completions_on_input": true,
+    "show_edit_predictions": true,
+    "edit_predictions": {
+        "mode": "subtle"
+    },
+    "features": {
+        "edit_prediction_provider": "copilot"
+    },
+    "vim_mode": true,
+    "vim": {
+        "toggle_relative_line_numbers": true,
+        "use_system_clipboard": "always"
+    },
+    "autosave": {
+        "after_delay": {
+            "milliseconds": 1000
+        }
+    },
+    "vertical_scroll_margin": 10,
+    "hard_tabs": false,
+    "tab_size": 4,
+    "ui_font_size": 16,
+    "buffer_font_size": 16,
+    // "buffer_font_family": "MonaspiceNe Nerd Font",
+    "buffer_line_height": {
+        "custom": 1.5
+    },
+    "relative_line_numbers": true,
+    "project_panel": {
+        "dock": "left",
+        "auto_fold_dirs": false
+    },
+    "theme": {
+        "mode": "dark",
+        "light": "One Light",
+        "dark": "One Dark"
+    },
+    "indent_guides": {
+        "coloring": "indent_aware"
+    },
+    "terminal": {
+        "dock": null,
+        "default_height": 700
+    },
+    "git": {
+        "git_gutter": "tracked_files",
+        "gutter_debounce": null,
+        "inline_blame": {
+            "delay_ms": 0,
+            "enabled": true,
+            "min_column": 0,
+            "show_commit_summary": false
+        },
+        "hunk_style": "staged_hollow"
+    },
+    "git_panel": {
+        "dock": "right"
+    },
+    "file_types": {
+        "C++": ["hpp", "c", "cpp", "hpp", "tpp"]
+    },
+    "languages": {
+        "C": {
+            "hard_tabs": true,
+            "show_wrap_guides": true,
+            "wrap_guides": [80],
+            "formatter": {
+                "external": {
+                    "command": "c_formatter_42"
+                }
+            }
+        },
+        "C++": {
+            "show_wrap_guides": true,
+            "wrap_guides": [120]
+        },
+        "Make": {
+            "hard_tabs": true
+        }
+    }
+}

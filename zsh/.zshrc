@@ -183,3 +183,12 @@ export PATH="$PATH:/home/zenix-dev/.local/bin"
 export PATH=$PATH:/home/zenix-dev/.spicetify
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+# append completions to fpath
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
+export PATH="$PATH:$HOME/.dotnet/tools"
+
+export PATH=$PATH:/home/zenix/.spicetify

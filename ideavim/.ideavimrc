@@ -11,7 +11,7 @@ noremap <leader>re :action RenameElement<CR>
 noremap <leader>ef :NERDTreeFocus<CR>
 noremap <leader>ee :NERDTreeToggle<CR>
 noremap <leader>ca :action action<CR>
-
+noremap <leader>ff :action GotoFile<CR>
 
 " Highlight copied text
 Plug 'machakann/vim-highlightedyank'
@@ -19,5 +19,3 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 " Nerd Tree
 Plug 'preservim/nerdtree'
-
-
