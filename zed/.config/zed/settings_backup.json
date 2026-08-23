@@ -2,27 +2,27 @@
     "agent": {
         "default_model": {
             "provider": "copilot_chat",
-            "model": "gpt-5-mini"
+            "model": "gpt-4.1",
         },
-        "model_parameters": []
+        "model_parameters": [],
     },
     "show_completions_on_input": true,
     "show_edit_predictions": true,
     "edit_predictions": {
-        "mode": "subtle"
+        "mode": "subtle",
     },
     "features": {
-        "edit_prediction_provider": "copilot"
+        "edit_prediction_provider": "copilot",
     },
     "vim_mode": true,
     "vim": {
         "toggle_relative_line_numbers": true,
-        "use_system_clipboard": "always"
+        "use_system_clipboard": "always",
     },
     "autosave": {
         "after_delay": {
-            "milliseconds": 1000
-        }
+            "milliseconds": 1000,
+        },
     },
     "vertical_scroll_margin": 10,
     "hard_tabs": false,
@@ -31,24 +31,24 @@
     "buffer_font_size": 16,
     // "buffer_font_family": "MonaspiceNe Nerd Font",
     "buffer_line_height": {
-        "custom": 1.5
+        "custom": 1.5,
     },
-    "relative_line_numbers": true,
+    "relative_line_numbers": "enabled",
     "project_panel": {
         "dock": "left",
-        "auto_fold_dirs": false
+        "auto_fold_dirs": false,
     },
     "theme": {
         "mode": "dark",
         "light": "One Light",
-        "dark": "One Dark"
+        "dark": "One Dark Pro",
     },
     "indent_guides": {
-        "coloring": "indent_aware"
+        "coloring": "indent_aware",
     },
     "terminal": {
         "dock": null,
-        "default_height": 700
+        "default_height": 700,
     },
     "git": {
         "git_gutter": "tracked_files",
@@ -57,15 +57,15 @@
             "delay_ms": 0,
             "enabled": true,
             "min_column": 0,
-            "show_commit_summary": false
+            "show_commit_summary": false,
         },
-        "hunk_style": "staged_hollow"
+        "hunk_style": "staged_hollow",
     },
     "git_panel": {
-        "dock": "right"
+        "dock": "right",
     },
     "file_types": {
-        "C++": ["hpp", "c", "cpp", "hpp", "tpp"]
+        "C++": ["hpp", "c", "cpp", "hpp", "tpp"],
     },
     "languages": {
         "C": {
@@ -74,16 +74,30 @@
             "wrap_guides": [80],
             "formatter": {
                 "external": {
-                    "command": "c_formatter_42"
-                }
-            }
+                    "command": "c_formatter_42",
+                },
+            },
         },
         "C++": {
+            "show_edit_predictions": true,
             "show_wrap_guides": true,
-            "wrap_guides": [120]
+            "wrap_guides": [120],
         },
         "Make": {
+            "hard_tabs": true,
+        },
+        "GDScript": {
             "hard_tabs": true
         }
-    }
+    },
+    "lsp": {
+        "omnisharp": {
+            "binary": {
+                "path": "csharp-ls",
+                "env": {
+                    "DOTNET_ROLL_FORWARD": "Major",
+                },
+            },
+        },
+    },
 }
